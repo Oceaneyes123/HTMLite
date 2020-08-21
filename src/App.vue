@@ -25,7 +25,7 @@
     </v-app-bar>
 
     <v-main>
-      <v-card :dark="darkSwitch">
+      <v-card :dark="darkSwitch" tile>
         <Main></Main>
       </v-card>
     </v-main>
