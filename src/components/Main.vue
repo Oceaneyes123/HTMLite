@@ -1,14 +1,21 @@
 <template>
   <v-container>
     <div class="d-flex justify-center">
-      <v-btn color="success" @click="output = code">Run</v-btn>
+      <v-btn color="success title hidden-sm-and-down" @click="output = code" large>
+        <v-icon class="mr-3">fas fa-running</v-icon>Run
+      </v-btn>
     </div>
     <v-row class="text-center h-100">
       <v-col cols="12" md="6">
         <v-textarea v-model="code" filled outlined height="100vh"></v-textarea>
       </v-col>
+      <v-col cols="12" class="d-md-none d-block mb-5">
+        <v-btn color="success title" @click="output = code" large>
+          <v-icon class="mr-3">fas fa-running</v-icon>Run
+        </v-btn>
+      </v-col>
       <v-col cols="12" md="6">
-        <v-card min-height="95%" class="text-left pa-2">
+        <v-card min-height="95%" class="text-left pa-2 rounded-lg" light>
           <div v-html="output"></div>
         </v-card>
       </v-col>
@@ -49,17 +56,26 @@ export default {
     about: false,
     code: `<!DOCTYPE html>
       <html>
+
               <head>
               </head>
 
               <body>
-                   <!-- Dont't Mind Me. I'm a comment -->
+
+                   <!-- Don't mind me. I'm a comment -->
+
                   <h1>Hello</h1>
                   <h6>Your Code Here</h6>
+
               </body>
-    </html>`,
+
+      </html>`,
     output: "",
   }),
+
+  mounted() {
+    this.output = this.code;
+  },
   methods: {},
 };
 </script>
